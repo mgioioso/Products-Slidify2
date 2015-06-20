@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iris Data Set Prediction Model Analysis</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Iris Data Set Prediction Model Analysis">
+  <meta name="author" content="Marisa Gioioso">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/question_logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Iris Data Set Prediction Model Analysis</h1>
+    <h2>Investigating the influence of seed and model</h2>
+    <p>Marisa Gioioso<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The model selection process may not be the most important part of the data analysis
+process. This is because:</p>
+
+<ul>
+<li><p>Many prediction models have similar accuracy on certain data sets</p></li>
+<li><p>Other factors have a much bigger impact, like:</p>
+
+<ul>
+<li>Quantity of data</li>
+<li>Appropriate partitioning of data set to pre-empt overfitting</li>
+</ul></li>
+<li><p><a href="https://mgioioso.shinyapps.io/ShinyAppProject">My shiny app</a> is an interactive
+way to investigate the impact of model type and seed on a Species
+classification of the Iris dataset. </p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:lightblue;">
+  <hgroup>
+    <h2>App Benefits</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The app can be used by any user even with minimal understanding of the statistics behind the predictive modeling process</li>
+<li>Can be used to create an experimental environment where users can compare
+and understand the difference between different models and seeds</li>
+<li>Shows in graphical form how the accuracy changes and how the sample of
+points changes with different seeds</li>
+<li>Ultimately shows the minimal impact that model and seed have on this problem,
+at least among the predictive models provided by this app.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:lightblue;">
+  <hgroup>
+    <h2>Demonstration</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>To illustrate the point here, let&#39;s see the difference between two very different models
+and two different seeds for each model.</li>
+<li>If we choose the GBM and LDA models, and two seeds--123 and 8989--we get the following results for accuracy:</li>
+</ul>
+
+<pre><code>##      Seed 123 Seed 8989
+## GBM 0.9333333 0.9777778
+## LDA 0.9777778 1.0000000
+</code></pre>
+
+<ul>
+<li>Since there are only 45 points in the testing set, if one model predicts just 
+one more point accurately over the other, it results in an accuracy gain of .0222. So the results above are very close.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:lightblue;">
+  <hgroup>
+    <h2>Demonstration cont.</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Using the app, you can visualize the differences calculated in the last slide:</li>
+</ul>
+
+<div style='text-align: center;'>
+    <img height='350' src='ShinyAppScreenshot2.png' />
+</div>
+
+<ul>
+<li><p>Notice the highlighted points that correspond to wrong predictions</p>
+
+<ul>
+<li>These are the only 2 of 45 points that were incorrectly classified</li>
+<li>This corresponds with the high accuracy calculated in the previous slide</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='App Benefits'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Demonstration'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Demonstration cont.'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
